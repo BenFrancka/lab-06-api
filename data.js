@@ -1,6 +1,4 @@
-meals: [
-
-
+const meals= [
 {
     id: 1,
     name: 'Chicken Enchiladas',
