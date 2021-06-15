@@ -8,7 +8,8 @@ const enchiladas = {
     in_stock : true,
     description: 'Blue corn tortillas with pulled chicken, chile verde sauce, cotija cheese, and fresh cilantro',
     category: 'Mexican',
-   difficulty: 'easy'
+   difficulty: 'easy',
+   price: 10
 };
 
 const spaghetti = {
@@ -17,7 +18,8 @@ const spaghetti = {
     in_stock : false,
     description: 'Handmade spaghetti noodles with classic red sauce, pork meatball kit, fresh basil, and parmigiano reggiano',
     category: 'Italian',
-    difficulty: 'medium'
+    difficulty: 'medium',
+    price: 12
 };
 
 const burgers = {
@@ -26,7 +28,8 @@ const burgers = {
     in_stock : true,
     description: 'Grass fed bison patties with brioche buns, smoked gouda cheese, and quick pickle kit',
     category: 'American',
-    difficulty: 'medium'
+    difficulty: 'medium',
+    price: 20
 };
 
 const ramen = {
@@ -35,7 +38,8 @@ const ramen = {
     in_stock : false,
     description: 'Gourmet Instant Ramen kit with pork belly, chili oil, and eggs',
     category: 'Japanese',
-    difficulty: 'hard'
+    difficulty: 'hard',
+    price: 20
 };
 
 const sushi = {
@@ -44,7 +48,8 @@ const sushi = {
     in_stock : true,
     description: 'Sushi rolling kit (includes bamboo mat), albacore belly tuna, rice, nori, hot sauce, black sesame seeds, scallions',
     category: 'Japanese',
-    difficulty: 'hard'
+    difficulty: 'hard',
+    price: 25
 };
 
 const pizza = {
@@ -53,7 +58,8 @@ const pizza = {
     in_stock : true,
     description: 'Detroit style deep dish pizza, includes dough kit, sauce, buffalo mozzarella, and aged pepperoni',
     category: 'American/Italian',
-    difficulty: 'easy'
+    difficulty: 'easy',
+    price: 12
 };
 
 const tacos = {
@@ -62,7 +68,8 @@ const tacos = {
     in_stock : false,
     description: 'Corn tortillas, fire-roasted salsa, zuchinni, nopalitos, mushrooms, lime, and fresh cilantro',
     category: 'Mexican',
-    difficulty: 'medium'
+    difficulty: 'medium',
+    price: 10
 };
 
 const meals = [
@@ -75,17 +82,17 @@ const meals = [
     tacos
 ]
 
-    it('meals responds with all meals data', async(done) => {
+    it('meals responds with all meals data', async() => {
         const response = await request.get('/meals');
-
+        
         expect(response.body).toEqual(meals);
-        done();
+        
     });
 
-    // it('meals/:id responds with a single meal', async(done) => {
-    //     const response = await request.get('/meals/3');
+     it('meals/:id responds with a single meal', async() => {
+         const response = await request.get('/meals/3');
 
-    //     expect(response.body).toEqual(burgers);
-    //     (done);
-    // })npm tes
+       expect(response.body).toEqual(burgers);
+        
+     });
 
