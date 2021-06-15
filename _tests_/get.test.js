@@ -1,3 +1,6 @@
+const app = require('../app.js');
+const supertest = require('supertest');
+const request = supertest(app);
 
 const enchiladas = {
     id: 1,
@@ -72,4 +75,17 @@ const meals = [
     tacos
 ]
 
-module.exports = meals;
+    it('meals responds with all meals data', async(done) => {
+        const response = await request.get('/meals');
+
+        expect(response.body).toEqual(meals);
+        done();
+    });
+
+    // it('meals/:id responds with a single meal', async(done) => {
+    //     const response = await request.get('/meals/3');
+
+    //     expect(response.body).toEqual(burgers);
+    //     (done);
+    // })npm tes
+
